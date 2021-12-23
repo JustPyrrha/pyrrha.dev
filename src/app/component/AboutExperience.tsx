@@ -5,8 +5,7 @@ const AboutExperience = () => {
     const [rank, setRank] = React.useState<number | null>(null);
 
     useEffect(() => {
-       //http://scoresaber.com/api/player/76561198205167308/full
-        fetch("https://scoresaber.com/api/player/76561198205167308/full")
+        fetch("https://scoresaber.com/api/player/76561198205167308/basic", {mode: "cors"})
             .then(res => res.json())
             .then(json => {
                 console.info(`[ScoreSaber] Pulled CountryRank for PyrrhaDev: #${json.countryRank}`)
