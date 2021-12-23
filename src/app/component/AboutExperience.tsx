@@ -1,23 +1,24 @@
-import {Card, CardContent, Chip, Grid, Tooltip, Typography} from "@mui/material";
+import {Card, CardContent, Chip, Grid, Typography} from "@mui/material";
 import React, {useEffect} from "react";
 
 const AboutExperience = () => {
     const [rank, setRank] = React.useState<number | null>(null);
 
     useEffect(() => {
-        fetch("https://scoresaber.com/api/player/76561198205167308/basic", {
-            mode: "cors",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            }
-        })
-            .then(res => res.json())
-            .then(json => {
-                console.info(`[ScoreSaber] Pulled CountryRank for PyrrhaDev: #${json.countryRank}`)
-                setRank(json.countryRank)
-            })
-            .catch(e => console.error(e))
+        // fetch("https://scoresaber.com/api/player/76561198205167308/basic", {
+        //     mode: "cors",
+        //     headers: {
+        //         "Accept": "application/json",
+        //         "Content-Type": "application/json"
+        //     }
+        // })
+        //     .then(res => res.json())
+        //     .then(json => {
+        //         console.info(`[ScoreSaber] Pulled CountryRank for PyrrhaDev: #${json.countryRank}`)
+        //         setRank(json.countryRank)
+        //     })
+        //     .catch(e => console.error(e))
+        setRank(40)
     }, [])
 
     return (
@@ -47,9 +48,9 @@ const AboutExperience = () => {
                                 that I quite enjoy. My frontend framework of choice is React and my mobile framework of
                                 choice is Flutter.
                                 <br/>
-                                I also enjoy modding PC games, playing with virtual reality and I am ranked <Tooltip
+                                I also enjoy modding PC games, playing with virtual reality and I am ranked {/*<Tooltip
                                 title={"Pulled directly from the ScoreSaber API."}
-                                arrow><strong>#{rank}</strong></Tooltip> in New Zealand for Beat Saber.
+                                arrow>*/}<strong>#{rank}</strong>{/*</Tooltip>*/} in New Zealand for Beat Saber.
                                 <br/>
 
                                 <br/>
