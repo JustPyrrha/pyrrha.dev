@@ -9,7 +9,7 @@ const AboutExperience = () => {
             mode: "cors",
             headers: {
                 "Accept": "application/json",
-                "Access-Control-Allow-Origin": "*"
+                "Content-Type": "application/json"
             }
         })
             .then(res => res.json())
