@@ -4,8 +4,10 @@ import Footer from "./component/Footer";
 import {Grid} from "@mui/material";
 import Skills from "./component/Skills";
 import ProjectCard from "./component/ProjectCard";
-import Projects from "./component/Projects";
+import Projects from "./data/Projects";
 import AboutExperience from "./component/AboutExperience";
+import Awards from "./component/Awards";
+import Events from "./component/Events";
 
 const App = () => {
     return (
@@ -47,6 +49,19 @@ const App = () => {
                                 )
                             )
                         }
+                    </Grid>
+
+                    <Grid item container xs={12}
+                          spacing={8}
+                          direction={"row"}
+                          alignItems={"center"}
+                          justifyContent={"center"}>
+                        <Grid item>
+                            <Awards/>
+                        </Grid>
+                        <Grid item>
+                            <Events/>
+                        </Grid>
                     </Grid>
                 </Grid>
             </div>
