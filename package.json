@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
-    "@types/node": "^16.11.17",
+    "@types/node": "^16.11.19",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.9",
     "@types/twemoji": "^12.1.2",
