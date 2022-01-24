@@ -39,8 +39,8 @@ jobs:
               output.message   = "unknown: could not retrive commit at build time."
             }
             
-            core.setOutput('buildInfo', JSON.stringify(outout));
-            core.info(`Build Info: ${JSON.stringify(outout)}`);
+            core.setOutput('buildInfo', JSON.stringify(output));
+            core.info(`Build Info: ${JSON.stringify(output)}`);
       - run: yarn install
       - run: yarn build
         env:
