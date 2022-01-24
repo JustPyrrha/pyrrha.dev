@@ -19,31 +19,29 @@ jobs:
         id: build-info
         with:
           script: |
-            core.info(`Getting commit info for ${context.sha}`);
-            const search = await github.rest.search.commits({
-              q: `hash:${context.sha}`,
-              per_page: 1
+            const search = await github.request('GET /repos/{owner}/{repo}/git/commits/{commit_sha}', {
+              owner: 'PyrrhaDevs',
+              repo: 'pyrrha.dev',
+              commit_sha: context.sha
             });
             
-            core.info(JSON.stringify(search.data));
-            
             let commit = {};
-            if(search.status == 200 && search.data.items.length > 0) {
-              commit = search.data.items[0];
+            if(search.status == 200) {
+              commit = search.data
             };
             
             let output = {
               sha: context.sha
             };
             
-            if(commit != {}) {
+            if(commit != {} && commit != undefined) {
                output.username = commit.author.login;
                output.date     = commit.commit.author.date;
                output.message  = commit.commit.message;
             } else {
-              output.username  = "octocat"
+              output.username  = "octocat";
               output.date      = new Date().toISOString();
-              output.message   = "unknown: could not retrive commit at build time."
+              output.message   = "unknown: could not retrive commit at build time.";
               core.warning(`Using default output data since seach has no items. Search response: ${JSON.stringify(commit)}`);
             }
             
