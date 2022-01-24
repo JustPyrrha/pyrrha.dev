@@ -37,6 +37,7 @@ jobs:
               output.username  = "octocat"
               output.date      = new Date().toISOString();
               output.message   = "unknown: could not retrive commit at build time."
+              core.warn(`Using default output data since seach has no items. Search response: ${JSON.stringify(commit)}`);
             }
             
             core.setOutput('buildInfo', JSON.stringify(output));
