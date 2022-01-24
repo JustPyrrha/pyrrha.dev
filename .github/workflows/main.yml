@@ -29,7 +29,7 @@ jobs:
             if(search.status == 200) {
               commit = search.data
             };
-            core.warn(JSON.stringify(search.data));
+            core.warning(JSON.stringify(search.data));
             let output = {
               sha: context.sha
             };
