@@ -15,8 +15,26 @@ jobs:
         with:
           node-version: '16'
           cache: 'yarn'
+      - uses: actions/github-script@v5
+        id: build-info
+        with:
+          script: |
+            const commit = await github.rest.search.commits({
+              q: `hash:${context.sha}`,
+              per_page: 1
+            });
+            
+            const username = commit.items[0].author.login;
+            const date     = commit.items[0].commit.author.date;
+            const sha      = context.sha;
+            const message  = commit.items[0].commit.message;
+            const output   = JSON.stringifiy({username, date, sha, message});
+            core.setOutput('buildInfo', output);
+            core.info(`Build Info: ${output}`);
       - run: yarn install
       - run: yarn build
+        env:
+          REACT_APP_BUILD_INFO: ${{ steps.build-info.outputs.buildInfo }}
       - id: get-sha
         shell: bash
         run: echo "::set-output name=sha::$(git rev-parse --short HEAD)"
