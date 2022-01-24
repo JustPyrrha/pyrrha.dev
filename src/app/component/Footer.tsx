@@ -52,7 +52,7 @@ export default function Footer() {
                         <Button
                             startIcon={<Twitter/>}
                             onClick={() => {
-                                global.window.location.href = "https://twitter.com/PyrrhaWasTaken"
+                                global.window.location.href = "https://twitter.com/JustPyrrha"
                             }}>
                             Twitter
                         </Button>
