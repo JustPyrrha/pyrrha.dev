@@ -19,34 +19,34 @@ jobs:
         id: build-info
         with:
           script: |
-            const search = await github.request('GET /repos/{owner}/{repo}/git/commits/{commit_sha}', {
-              owner: 'PyrrhaDevs',
-              repo: 'pyrrha.dev',
-              commit_sha: context.sha
+            const commitLookup = await github.request('GET /repos/PyrrhaDevs/pyrrha.dev/git/commits/{sha}', {
+                sha: context.sha
             });
-            
-            let commit = {};
-            if(search.status == 200) {
-              commit = search.data
-            };
-            core.warning(JSON.stringify(search.data));
-            let output = {
-              sha: context.sha
-            };
-            
-            if(commit != {} && commit != undefined) {
-               output.username = commit.author.login;
-               output.date     = commit.commit.author.date;
-               output.message  = commit.commit.message;
+
+            if(commitLookup.status == 200) {
+                const authorLookup = await github.request('GET /search/users?q={email} in:email&per_page=1', {
+                    email: commitLookup.data.author.email
+                });
+
+                if(authorLookup.status == 200) {
+                    if(authorLookup.data.total_count > 0) {
+                        const buildInfo = {
+                            username: authorLookup.data.items[0].login,
+                            date: commitLookup.data.author.date,
+                            sha: context.sha,
+                            message: commitLookup.data.message
+                        }
+
+                        core.setOutput('buildInfo', JSON.stringify(buildInfo))
+                    } else {
+                        core.error(`[AuthorLookup|IncompleteData(${authorLookup.data.incomplete_data})] Failed to find user with email "${commitLookup.data.author.email}".`)
+                    }
+                } else {
+                    core.error(`[AuthorLookup|Status(${authorLookup.status})] Failed to find user with email "${commitLookup.data.author.email}".`);
+                }
             } else {
-              output.username  = "octocat";
-              output.date      = new Date().toISOString();
-              output.message   = "unknown: could not retrive commit at build time.";
-              core.warning(`Using default output data since seach has no items. Search response: ${JSON.stringify(commit)}`);
+                core.error(`[CommitLookup|Status(${commitLookup.status})] Failed to find commit with SHA1 "${context.sha}".`)
             }
-            
-            core.setOutput('buildInfo', JSON.stringify(output));
-            core.info(`Build Info: ${JSON.stringify(output)}`);
       - run: yarn install
       - run: yarn build
         env:
