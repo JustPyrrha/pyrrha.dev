@@ -23,6 +23,16 @@ jobs:
           override: true
       - name: Setup Trunk
         run: wget -qO- https://github.com/thedodd/trunk/releases/download/v0.17.5/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
+      - uses: actions/cache@v3
+        name: Cache
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
       - run: ./trunk build --config Trunk-Release.toml
         name: Build
       - uses: JamesIves/github-pages-deploy-action@v4
