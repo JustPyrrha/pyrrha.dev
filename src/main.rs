@@ -5,6 +5,8 @@ use chrono::{Datelike, Local};
 use yew::prelude::*;
 
 use crate::components::footer::PFooter;
+use crate::components::header::PHeader;
+use crate::components::section::Section;
 use crate::util::build_info::BuildInfo;
 
 #[function_component]
@@ -16,6 +18,10 @@ fn App() -> Html {
         <div class={classes!("page")} >
             <div class={classes!("side-buffer")} />
             <div class={classes!("content")}>
+                <PHeader />
+                <Section alt=true>
+                    {"test"}
+                </Section>
                 <PFooter {year} {build} />
             </div>
             <div class={classes!("side-buffer")} />

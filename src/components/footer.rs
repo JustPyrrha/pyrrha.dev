@@ -11,17 +11,17 @@ pub struct PFooterProps {
 pub fn PFooter(props: &PFooterProps) -> Html {
     html! {
         <footer>
-            <div class={classes!("pfooter")}>
-                <div class={classes!("pfooter__row")}>
+            <div class={classes!("pFooter")}>
+                <div class={classes!("pFooter__row")}>
                     {"Released under MIT License | Copyright © Pyrrha Wills "}{props.year.clone()}
                 </div>
-                <div class={classes!("pfooter__row--icons")}>
+                <div class={classes!("pFooter__row--icons")}>
                     <a href="https://github.com/JustPyrrha" target="_blank"><ion-icon size="large" name="logo-github" /></a>
                     <a href="https://pyrrha.gay" target="_blank"><ion-icon size="large" name="planet-outline" /></a>
                 </div>
             </div>
 
-            <div class={classes!("buildinfo")}><a href={"https://github.com/JustPyrrha/pyrrha.dev/commit/".to_owned() + props.build.commit}>{props.build.commit}</a>{" built at "}{props.build.built_at.format("%d/%m/%Y %X %Z")}</div>
+            <div class={classes!("buildInfo")}><a href={"https://github.com/JustPyrrha/pyrrha.dev/commit/".to_owned() + props.build.commit}>{props.build.commit}</a>{" built at "}{props.build.built_at.format("%d/%m/%Y %X %Z")}</div>
         </footer>
     }
 }
