@@ -21,7 +21,7 @@ pub fn PFooter(props: &PFooterProps) -> Html {
                 </div>
             </div>
 
-            <div class={classes!("buildInfo")}><a href={"https://github.com/JustPyrrha/pyrrha.dev/commit/".to_owned() + props.build.commit}>{props.build.commit}</a></div>
+            <div class={classes!("buildInfo")}><a href={"https://github.com/JustPyrrha/pyrrha.dev/tree/".to_owned() + props.build.commit}>{props.build.commit}</a></div>
         </footer>
     }
 }
