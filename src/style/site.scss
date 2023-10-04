@@ -1,6 +1,11 @@
 @import url("https://fonts.google.com/css2?family=Poppins");
 @import "theme";
 
+@font-face {
+  font-family: Poppins;
+  src: url("/Poppins-Regular.ttf") format("truetype");
+}
+
 // global
 body {
   font-family: 'Poppins', sans-serif;
