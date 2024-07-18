@@ -1,0 +1,58 @@
+:root {
+    --primary: #4c4f69;
+    --secondary: #eff1f5;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary: #cdd6f4;
+        --secondary: #1e1e2e;
+    }
+}
+
+a {
+    text-decoration: underline;
+    color: var(--primary);
+}
+
+body {
+    font-family: monospace;
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+header > div {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--primary);
+    padding: 10px 30px;
+}
+
+section {
+    padding: 10px 30px;
+}
+
+section > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+div > h4 {
+    margin-bottom: 5px;
+}
+
+div > h5 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
