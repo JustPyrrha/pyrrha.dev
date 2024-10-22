@@ -1,100 +1,167 @@
 :root {
-    --primary: #4c4f69;
-    --secondary: #eff1f5;
-    --accent: #f7768e;
-    --colour-ease: 0.4s;
+  --primary: #4c4f69;
+  --secondary: #eff1f5;
+  --accent: #f7768e;
+  --colour-ease: 0.4s;
+  --padding-ease: 0.2s;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --primary: #cdd6f4;
-        --secondary: #1e1e2e;
-    }
+  :root {
+    --primary: #cdd6f4;
+    --secondary: #1e1e2e;
+  }
 }
 
 a {
-    text-decoration: underline;
-    color: var(--primary);
+  text-decoration: underline;
+  color: var(--primary);
 }
 
 .nav-links {
-    transition: color var(--colour-ease) ease;
+  transition: color var(--colour-ease) ease;
 }
 
 .nav-links a:hover {
-    color: var(--accent);
+  color: var(--accent);
 }
 
 body {
-    font-family: monospace;
-    background-color: var(--secondary);
-    color: var(--primary);
+  font-family: monospace;
+  background-color: var(--secondary);
+  color: var(--primary);
+  overflow-x: hidden;
+  width: calc(100% - 20px);
+  max-width: 100vw;
+  text-wrap: pretty;
+  padding: 10px;
+  margin: 0;
 }
 
+main {
+  padding: 0;
+  transition: padding var(--padding-ease) ease;
+}
 header > div {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 850px) {
+  header {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 1600px) {
+  main {
+    padding: 0 10vw;
+  }
 }
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--primary);
-    padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--primary);
+  padding: 10px 30px;
 }
 
 section {
-    padding: 10px 30px;
-    container-type: normal;
+  padding: 0 15px;
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+    padding-top: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--secondary);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 
 section > div {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .card {
-    min-width: 380px;
-    padding: 10px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    border: 1px solid var(--primary);
-    border-radius: 5px;
-    box-shadow: 4px 4px 0px var(--primary);
-    transition: box-shadow var(--colour-ease) ease, border var(--colour-ease) ease, color var(--colour-ease) ease;
+  min-width: calc(100% - 20px);
+  padding: 10px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  box-shadow: 4px 4px 0px var(--primary);
+  transition: box-shadow var(--colour-ease) ease, border var(--colour-ease) ease,
+    color var(--colour-ease) ease;
 }
 
+@media (min-width: 500px) {
+  section {
+    padding: 10px 20px;
+  }
+
+  section > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 10px;
+  }
+  .card {
+    min-width: 380px;
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+}
 .card:hover {
-    border: 1px solid var(--accent);
-    box-shadow: 4px 4px 0px var(--accent);
-    color: var(--accent);
+  border: 1px solid var(--accent);
+  box-shadow: 4px 4px 0px var(--accent);
+  color: var(--accent);
 }
 
 .card:hover a {
-    color: var(--accent);
+  color: var(--accent);
 }
 
 div > h4 {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 div > h5 {
-    margin-top: 5px;
-    margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .card a {
-    margin-top: auto;
-    transition: color var(--colour-ease) ease;
+  margin-top: auto;
+  transition: color var(--colour-ease) ease;
 }
 
 .card a:hover {
-    color: var(--primary);
+  color: var(--primary);
+}
+
+.top-border {
+  border-top: 1px solid var(--primary);
+  padding-top: 20px;
+}
+.links {
+  margin-top: auto;
 }

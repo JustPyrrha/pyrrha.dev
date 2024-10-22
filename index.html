@@ -22,16 +22,88 @@
     </header>
     <main>
         <section>
-            <h3>Projects</h3>
+            <h3>Experience</h3>
+            <div>
+                <div class="card">
+                    <h4>Lithicode</h4>
+                    <h5>Fullstack Engineer &bullet; Contract, Remote (April 2024 - October 2024)</h5>
+                    <h5>React &bullet; TypeScript &bullet; C# &bullet; Asp.net &bullet; Postgres &bullet; Jest &bullet; Testing Library React &bullet; xUnit &bullet; AWS</h5>
+                    <p>
+                        Lithicode is a small software development company that specializes in custom software solutions for small to medium sized businesses.
+                        <br />
+                        My primary role was in building internal tools for a client they had. The tools were private, full stack web apps that needed to be secure and easy to use. 
+                        We chose to use React and TypeScript for the frontend and C# for the backend with a Postgres database. 
+                        We also set up the CI/CD pipeline for the project using GitHub Actions and deployed the website to AWS EC2.                        
+                        <br />
+                        We completed the project two months ahead of schedule and the clients were very happy with the project. Training has been going smoothly with the documentation we provided. 
+                    </p>
+                    <!-- Reason for leaving: Contract finished -->
+                    <h5 class="links">
+                        <!-- to be created -->
+                    </h5>
+                </div>
+                <div class="card">
+                    <h4>Circles Learning Labs</h4>
+                    <h5>Fullstack Engineer and Dev-ops &bullet; Full-time, Remote (February 2022 - November 2023)</h5>
+                    <h5>NextJs &bullet; TypeScript  &bullet; React &bullet; Erlang &bullet; Elixir &bullet; Jest &bullet; Testing Library React &bullet; GraphQL &bullet; Postgres &bullet; DynamoDB &bullet; AWS</h5>
+                    <p> 
+                        <!--Old room grossness -->
+                        When I started, the existing frontend product was an amalgimation of vanilla JavaScript, JQuery, and React bundled into the backend project. The project was a WebRTC based video conferencing platform 
+                        with many user interactions and features. The total page load was something like 18mb and the build/deploy time took 30 mins on a good day.
+                        <br />
+                        <!--New room build  -->
+                        The first major project I was a part of was rewriting the frontend using modern web standards. We chose NextJs and TypeScript for the frontend for the speed and type safety it provided.
+                        The backend was written in Elixir and Erlang and we used GraphQL to communicate between the two. This was mostly complete already so my focus was on the frontend. We cut the total page load down to 2mb and 
+                        added in a host of basic accessibility and localization options.  
+                        <br />
+                        <!--Storybook work -->
+                        Circles had the barebones of a component library for use in this weird amalgimation of frontend technologies but once the rewrite project began we could start to finalise the library using 
+                        good practices, modern standards, and a focus on accessibility. We also started using Storybook to document the components and make it easier for the team to use them. This rebuild also included 
+                        a big push for unit tests on components using Jest and Testing Library React.
+                        <br />
+                        <!--Github actions optimisations -->
+                        As we gained more traction in our optimization efforts, we started to look at the CI/CD pipeline and how we could improve it. We moved from a single monolithic pipeline to a more modular approach and 
+                        did a major overhaul on the Dockerfiles and Caching strategies to speed up the build times. We cut the build and deploy times in half, which will save many hours of developer time in the long run. 
+                        <br />
+                        <!--Transcription project  -->
+                        The second major project I worked on while at Circles was the implementation of meeting Transcription and Live Captioning using AWS Chime.
+                        Over three months, I worked in a small team with one other coworker to interface with the clients directly and bring their feature visions to life.
+                    </p>
+                    <!-- Reason for leaving: Company downsizing -->
+                    <h5 class="links">
+                        <a href="https://circlespace.io/">Website</a>
+                    </h5>
+                </div>
+                <div class="card">
+                    <h4>Re-Leased</h4>
+                    <h5>Fullstack Engineer &bullet; Full-time, on-site (November 2020 - February 2022)</h5>
+                    <h5>C# &bullet; .Net MVC &bullet; xUnit &bullet; Vue.js &bullet; JavaScript &bullet; Microsoft SQL Server &bullet; Azure DevOps</h5>
+                    <p>
+                        Re-Leased is a medium sized Fin-tech company specializing in trust accounting and commercial real estate management.
+                        <br />
+                        My primary role was on a team dedicated to bug fixing and trust accounting,
+                        which focused on clearing out a fairly large backlog of bugs and bracing them all with unit tests to prevent regression. 
+                        <br />
+                        I learnt a lot of what I know about software testing during my time there and it has become something I advocate for in any project or position since.
+                    </p>
+                    <!-- Reason for leaving: Headhunted for Circles -->
+                    <h5 class="links">
+                        <a href="https://www.re-leased.com/">Website</a>
+                    </h5>
+                </div>  
+            </div>
+        </section>
+
+        <section>
+            <h3 class="top-border">Projects</h3>
             <div>
                 <div class="card">
                     <h4>Athena</h4>
                     <h5>Discord Bot &bullet; Kotlin &bullet; KordEx</h5>
                     <p>
                         A TTRPG Discord bot, currently featuring an advanced dice roller
-                        <br>
                         with initive tracker and character sheets in development.
-                        <br>
+                        <br />
                         Currently closed-source but will be open-sourced under GPL-3.0 for 1.0.
                     </p>
                     <h5 class="links">
@@ -45,7 +117,7 @@
                     <h5>Mod &bullet; C# &bullet; Unity</h5>
                     <p>
                         Event driven networking for <a href="https://www.resolutiongames.com/demeo">Demeo</a> mods.
-                        <br>
+                        <br />
                         Supports the built-in mod loader, BepInEx, and MelonLoader.
                     
                     </p>
@@ -60,7 +132,7 @@
                     <h5>Mod &bullet; C# &bullet; Unity</h5>
                     <p>
                         A simple library for loading custom localizations for <a href="https://www.resolutiongames.com/demeo">Demeo</a> mods.
-                        <br>
+                        <br />
                         Supports the built-in mod loader, tested with BepInEx and MelonLoader.
                     </p>
                     <h5 class="links">
@@ -74,9 +146,8 @@
                     <h5>Mod &bullet; Java &bullet; Minecraft</h5>
                     <p>
                         The classic space mod, rewritten for modden Minecraft.
-                        <br>
+                        <br />
                         While I'm no longer an active contributor to the project,
-                        <br>
                         I was one of the original developers that started the modern rewrite on Fabric.
                     </p>
                     <h5 class="links">
@@ -88,7 +159,6 @@
                     <h5>Mod &bullet; Java &bullet; Minecraft</h5>
                     <p>
                         A simple mod to display information about what a player is doing in the <a href="https://modrinth.com/mod/galacticraft-legacy">Galacticraft</a> Minecraft mod
-                        <br>
                         via Discord Rich Presence. Supports the Extra Planets, More Planets, and Galaxy Space addons.
                     </p>
                     <h5 class="links">
@@ -114,17 +184,23 @@
             </div>
         </section>
         <section>
-            <h3>Events</h3>
+            <h3 class="top-border">Events</h3>
             <div>
                 <div class="card">
                     <h4>ModFest</h4>
                     <h5>Organiser</h5>
                     <p>
-                        ModFest hosts collaborative Minecraft modding virtual events, 
-                        <br>
-                        including development jams and in-game conventions.
-                        <br>
-                        I have also participated in several of the mod jams hosted by ModFest.
+                        ModFest is a collaborative Minecraft modding event that hosts development jams and in-game conventions. 
+                        <br />
+                        It is an event run every few months to bring the community together to work on mods and have fun. 
+                        <br />
+                        The organizers are a group of twenty five volunteers who work together to make the event happen and I have been a member since the third event.
+                        <br />
+                        I have also participated in several of the mod jams hosted by ModFest, creating mods and tools for the community to use.
+                        <br />
+                        While there are no prizes for the events, it is a great way to meet new people and learn new things while being an active member of the community.
+                        <br />
+                        
                     </p>
                     <h5 class="links">
                         <a href="https://modfest.net">Website</a>
@@ -136,21 +212,14 @@
                     <h4>GovHack New Zealand &bullet; 2020</h4>
                     <h5>Participant &bullet; Getting Around Challenge Runner Up</h5>
                     <p>
-                        During the weekend hackathon, our team developed and demoed a tool
-                        <br>
-                        that would help communities use open source and community data to help with improvements we called LivCity.
-                        <br>
+                        During the weekend hackathon, our team developed and demoed a tool that would help communities use open source and community data to help with improvements we called LivCity.
+                        <br />
                         LivCity is an application that allows a city to gain community sourced information on selected areas.
-                        <br>
-                        This app functions by an administrator or researcher selecting an area to question, 
-                        <br>
-                        this could be for example regarding air pollution, traffic, safety, waste and more. 
-                        <br>
-                        Using feedback from the community, the appropriate authorities can develop needed infrastructure in
-                        <br>
-                        areas or appropriate social services, greatly improving the efficiency, usefulness, 
-                        <br>
-                        and bringing innovation to the community.
+                        <br />
+                        This app functions by an administrator or researcher selecting an area to question, this could be for example regarding air pollution, traffic, safety, waste and more. 
+                        <br />
+                        Using feedback from the community, the appropriate authorities can develop needed infrastructure in areas or appropriate social services,
+                        greatly improving the efficiency, usefulness, and bringing innovation to the community.
                     </p>
                     <h5 class="links">
                         <a href="https://github.com/TeamIO-NZ/liv-city-backend">Backend Repo</a>
@@ -164,19 +233,15 @@
                     <h4>GovHack New Zealand &bullet; 2019</h4>
                     <h5>Participant &bullet; Innovate New Zealand Award &bullet; Best use of data in a Civil Emergency Award</h5>
                     <p>
-                        For GovHack 2019 the team created a tourism app designed to help connect visitors to local businesses
-                        <br>
-                        and help guide tourists to safe areas in the event of a civil emergency.
-                        <br>
+                        For GovHack 2019 the team created a tourism app designed to help connect visitors to local businesses and help guide tourists to safe areas in the event of a civil emergency.
+                        <br />
                         Localé is a tourism based application designed to better connect visitors to local businesses and events in a safe and stress free manner. 
-                        <br>
+                        <br />
                         Localé will also include local area safety and evacuation information to improve community safety. 
-                        <br>
+                        <br />
                         Data generated can be fed back to the council to aid in council and civil defense planning. 
-                        <br>
-                        The end goal of our idea is to have a well designed app with a great user experience, 
-                        <br>
-                        while accomplishing our core concepts well.
+                        <br />
+                        The end goal of our idea is to have a well designed app with a great user experience, while accomplishing our core concepts well.
                     </p>
                     <h5 class="links">
                         <a href="https://github.com/TeamIO-NZ/Locale-Backend">Backend Repo</a>
