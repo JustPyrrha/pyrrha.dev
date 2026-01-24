@@ -165,3 +165,9 @@ div > h5 {
 .links {
   margin-top: auto;
 }
+
+.banner {
+  display: flex;
+  border-bottom: 1px solid var(--primary);
+  padding: 10px 30px;
+}
